@@ -206,7 +206,7 @@ if ( !class_exists('Puc_v4p11_UpdateChecker', false) ):
 		 */
 		public function allowMetadataHost($allow, $host) {
 			if ( $this->cachedMetadataHost === 0 ) {
-				$this->cachedMetadataHost = parse_url($this->metadataUrl, PHP_URL_HOST);
+				$this->cachedMetadataHost = wp_parse_url($this->metadataUrl, PHP_URL_HOST);
 			}
 
 			if ( is_string($this->cachedMetadataHost) && (strtolower($host) === strtolower($this->cachedMetadataHost)) ) {
