@@ -25,7 +25,7 @@ if ( !class_exists('Puc_v4p11_OAuthSignature', false) ):
 			$parameters = array();
 
 			//Parse query parameters.
-			$query = parse_url($url, PHP_URL_QUERY);
+			$query = wp_parse_url($url, PHP_URL_QUERY);
 			if ( !empty($query) ) {
 				parse_str($query, $parsedParams);
 				if ( is_array($parameters) ) {
